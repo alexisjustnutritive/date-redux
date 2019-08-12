@@ -1,4 +1,4 @@
-import { ADD_DATE } from "./types";
+import { ADD_DATE, DELETE_DATE } from "./types";
 
 export const addDateAction = date => {
     return {
@@ -6,3 +6,10 @@ export const addDateAction = date => {
         payload: date
     }
 }
+
+export const deleteDateAction = id => {
+    return {
+        type: DELETE_DATE,
+        payload: id
+    }
+} 

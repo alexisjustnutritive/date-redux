@@ -11,7 +11,7 @@ const DateList = () => {
         <>
             <div className="card-deck d-flex flex-column">
                 { 
-                    dates.map( ( date, index ) => <DateItem date={ date } key={ index }/> )
+                    dates.map( ( date, index ) => <DateItem date={ date } key={ date.id }/> )
                 }
             </div>
             { dates.length === 0 ? <p className="alert alert-warning p-1 m-0 text-black text-center">add a new date</p> : null }

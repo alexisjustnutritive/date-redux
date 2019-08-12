@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { addDateAction } from './actions/datesActions';
 import { validateAddDateFormAction } from './actions/validateAddDateFormAction';
 import { useDispatch, useSelector } from 'react-redux';
+import uuid from 'uuid/v4';
 
 function AddDate( { addDate } ) {
 
@@ -14,7 +15,8 @@ function AddDate( { addDate } ) {
         pet_name: '',
         owner_name: '',
         date: '',
-        time: ''
+        time: '',
+        id: ''
     });
 
     const onChange = e => {
@@ -32,7 +34,7 @@ function AddDate( { addDate } ) {
             return;
         }
         dispatch( validateAddDateFormAction( false ) );
-        dispatch( addDateAction( date ) );
+        dispatch( addDateAction( { ...date, id: uuid() } ) );
     };
 
     return (
